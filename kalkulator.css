@@ -1,0 +1,387 @@
+:root {
+  --navy: #1c2e6b;
+  --navy-dark: #121f4d;
+  --red: #c8102e;
+  --gold: #d9a520;
+  --bg: #f3f5fa;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #5b6475;
+  --line: #e3e7ef;
+  --exempt: #fff7e0;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* ===== Fejlec ===== */
+header {
+  background: linear-gradient(135deg, var(--navy-dark), var(--navy));
+  color: #fff;
+  border-bottom: 5px solid var(--red);
+}
+
+.header-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-inner img {
+  width: 84px;
+  height: auto;
+  flex-shrink: 0;
+  background: #fff;
+  border-radius: 14px;
+  padding: 6px;
+}
+
+.header-inner .school {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+.header-inner h1 {
+  margin: 2px 0 0;
+  font-size: 1.8rem;
+  letter-spacing: 0.3px;
+}
+
+.header-inner h1 span { color: var(--gold); }
+
+/* ===== Tartalom ===== */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px 16px 40px;
+  display: grid;
+  gap: 20px;
+}
+
+main > * { min-width: 0; }
+
+.card {
+  background: var(--card);
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(18, 31, 77, 0.07);
+}
+
+.card h2 {
+  margin: 0 0 12px;
+  font-size: 1.25rem;
+  color: var(--navy);
+}
+
+.admission {
+  border-left: 5px solid var(--gold);
+}
+
+.admission p { margin: 0 0 10px; }
+.admission p:last-child { margin-bottom: 0; }
+
+.date-line {
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.fill-hint {
+  margin: 0 0 14px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--red);
+}
+
+.info-box {
+  margin: 0 0 18px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: #eef2fb;
+  border-left: 5px solid var(--navy);
+  font-size: 0.95rem;
+}
+
+.info-box p { margin: 0 0 8px; }
+.info-box p:last-child { margin-bottom: 0; }
+
+.note {
+  margin: 0 0 16px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #fdecee;
+  border: 1px solid #f5c2c9;
+  font-size: 0.93rem;
+}
+
+.note strong { color: var(--red); }
+
+/* ===== Tablazat ===== */
+.table-wrap { overflow-x: auto; }
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: 560px;
+}
+
+th, td {
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--line);
+  text-align: center;
+  vertical-align: middle;
+}
+
+th:first-child, td:first-child {
+  text-align: left;
+  font-weight: 600;
+}
+
+thead th {
+  background: var(--navy);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+thead th:first-child { border-top-left-radius: 10px; }
+thead th:last-child  { border-top-right-radius: 10px; }
+
+tbody tr:hover td { background: #f8f9fc; }
+tbody tr:hover td.is-exempt { background: var(--exempt); }
+
+td.is-exempt { background: var(--exempt); }
+
+.cell-subject {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+td.is-exempt .cell-subject { color: #a86400; }
+
+input.grade {
+  width: 58px;
+  height: 44px;
+  border: 2px solid #cfd6e3;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--navy);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+input.grade:focus {
+  outline: none;
+  border-color: var(--navy);
+  box-shadow: 0 0 0 3px rgba(28, 46, 107, 0.15);
+}
+
+input.grade::placeholder {
+  color: #b8c0cf;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+input.invalid {
+  border-color: var(--red);
+  background: #fdecee;
+}
+
+.exempt {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  cursor: pointer;
+  user-select: none;
+}
+
+.exempt input { accent-color: var(--red); width: 16px; height: 16px; cursor: pointer; }
+
+/* ===== Gombok ===== */
+.buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 12px 26px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+
+button:active { transform: scale(0.98); }
+
+button[type="submit"] { background: var(--red); color: #fff; }
+button[type="submit"]:hover { background: #a50d26; }
+
+#reset-btn { background: #e7eaf1; color: var(--text); }
+#reset-btn:hover { background: #d5dae5; }
+
+.error {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: #fdecee;
+  color: #a50d26;
+  font-weight: 500;
+}
+
+/* ===== Eredmeny ===== */
+.result {
+  border-top: 5px solid var(--navy);
+}
+
+.score {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 4px 0 10px;
+}
+
+.score .points {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1;
+}
+
+.score .max {
+  font-size: 1.3rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.bar {
+  height: 12px;
+  background: #e7eaf1;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+
+.bar div {
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--navy), var(--red));
+  border-radius: 6px;
+  transition: width 0.6s ease;
+}
+
+.years {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 12px;
+}
+
+.years div {
+  background: #f5f7fb;
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+.years span { display: block; font-size: 0.85rem; color: var(--muted); }
+.years strong { font-size: 1.3rem; color: var(--navy); }
+
+.subs {
+  margin-top: 16px;
+  padding: 12px 14px;
+  background: var(--exempt);
+  border-radius: 10px;
+  font-size: 0.92rem;
+}
+
+.subs ul { margin: 6px 0 0; padding-left: 20px; }
+
+/* ===== Lablec ===== */
+footer {
+  background: var(--navy-dark);
+  color: #d7dcea;
+  border-top: 5px solid var(--gold);
+}
+
+.footer-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 28px 16px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.footer-inner img { width: 56px; height: auto; background: #fff; border-radius: 10px; padding: 4px; }
+
+footer h3 { margin: 0 0 8px; color: #fff; font-size: 1.05rem; }
+
+footer ul { list-style: none; margin: 0; padding: 0; }
+footer li { margin-bottom: 4px; }
+footer li b { color: var(--gold); font-weight: 600; display: inline-block; min-width: 90px; }
+
+footer a { color: #fff; }
+footer a:hover { color: var(--gold); }
+
+@media (max-width: 600px) {
+  .header-inner img { width: 60px; }
+  .header-inner h1 { font-size: 1.4rem; }
+  .card { padding: 18px; }
+  .score .points { font-size: 2.4rem; }
+
+  /* Telefonon: targyankenti kartyak oldalra gorgetes helyett */
+  table { min-width: 0; display: block; }
+  tbody td { min-width: 0; }
+  thead { display: none; }
+  tbody, tr { display: block; }
+  tbody tr {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  tbody td { border-bottom: none; padding: 10px 4px; }
+  tbody td:first-child {
+    grid-column: 1 / -1;
+    background: var(--navy);
+    color: #fff;
+    padding: 8px 12px;
+  }
+  tbody tr:hover td:first-child { background: var(--navy); }
+  tbody td[data-year]::before {
+    content: attr(data-year);
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+  .cell-subject { font-size: 0.66rem; letter-spacing: -0.2px; text-transform: none; }
+  tbody td { padding-left: 2px; padding-right: 2px; }
+  .exempt { font-size: 0.75rem; }
+}

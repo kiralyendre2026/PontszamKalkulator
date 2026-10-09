@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--
+  FELTOLTES AZ EDIR HONLAPRA:
+  Az EDIR a feltoltott fajlok nevet megvaltoztatja (pl. kalkulator.js -> kalkulator_3f9a1c2b7d.js).
+  1. Elobb toltsd fel: kalkulator.js, kalkulator.css, logo.png, es masold ki mindharom linkjet.
+  2. Ebben a fajlban cserelj ki (Jegyzettomb: Szerkesztes > Csere > Az osszes cserejet):
+       kalkulator.js   -> a feltoltott kalkulator.js teljes linkje
+       kalkulator.css  -> a feltoltott kalkulator.css teljes linkje
+       logo.png        -> a feltoltott logo.png teljes linkje
+  3. Mentsd el, es utoljara toltsd fel ezt a kalkulator.html-t. A honlapon erre linkelj.
+-->
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pontszámító – Király Endre Technikum és Szakképző Iskola</title>
+  <link rel="icon" href="logo.png">
+  <link rel="stylesheet" href="kalkulator.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <img src="logo.png" alt="A Király Endre iskola címere">
+      <div>
+        <p class="school">Váci SZC Király Endre Technikum és Szakképző Iskola</p>
+        <h1>Felvételi <span>pontszámító</span></h1>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="card admission">
+      <h2>Hogyan lehet bekerülni?</h2>
+      <p>
+        Képzéseinkre a <strong>tanulmányi eredményből</strong> számított pontszám és a
+        <strong>pályaalkalmassági elbeszélgetésen</strong> való megfelelés szerint kialakított
+        sorrend alapján lehet bekerülni.
+      </p>
+      <p class="date-line">Elbeszélgetés várható ideje: 2027. február–március.</p>
+      <p>
+        A <strong>szakmai képzés</strong> megkezdéséhez az <strong>egészségügyi alkalmassági
+        vizsgálaton</strong> is meg kell felelni.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Pontszám meghatározás</h2>
+      <p class="fill-hint">A bizonyítványban szereplő jegyek alapján kell kitölteni.</p>
+      <div class="info-box">
+        <p>
+          Ha <strong>matematika</strong> vagy <strong>idegen nyelv</strong> értékelés alól van felmentése,
+          akkor ott elsőként a <strong>„Felmentett”</strong> négyzetet kell bejelölni.
+          Utána a megjelenő tantárgyban elért osztályzatokat kell megadni.
+        </p>
+        <p>
+          Ha <strong>magyar nyelv és irodalom</strong> tantárgyak értékelése alól van felmentve, akkor a
+          központi rendszerből érkező jegyei alapján <strong>egyéni elbírálás</strong> alá fog esni.
+        </p>
+      </div>
+
+      <form id="calc-form" novalidate>
+        <div class="table-wrap">
+          <table>
+            <thead id="table-head"></thead>
+            <tbody id="table-body"></tbody>
+          </table>
+        </div>
+
+        <div class="buttons">
+          <button type="submit">Számolás</button>
+          <button type="button" id="reset-btn">Törlés</button>
+        </div>
+      </form>
+
+      <div id="error" class="error" hidden></div>
+    </section>
+
+    <section id="result" class="card result" hidden></section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <img src="logo.png" alt="">
+      <div>
+        <h3>Váci SZC Király Endre Technikum és Szakképző Iskola</h3>
+        <ul>
+          <li><b>Cím:</b> 2600 Vác, Naszály út 8.</li>
+          <li><b>Telefon:</b> <a href="tel:+3627316866">06 27 316-866</a></li>
+          <li><b>E-mail:</b> <a href="mailto:titkarsag@kiralyendre.hu">titkarsag@kiralyendre.hu</a></li>
+          <li><b>Honlap:</b> <a href="https://kiralyendre.hu/" target="_blank" rel="noopener">kiralyendre.hu</a></li>
+          <li><b>OM azon.:</b> 203065</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <script src="kalkulator.js"></script>
+</body>
+</html>
